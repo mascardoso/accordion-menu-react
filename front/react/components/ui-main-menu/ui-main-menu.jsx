@@ -153,11 +153,6 @@ class MainMenu extends Component {
           {this.createMenuHeader(this.state.menuItems)}
         </ul>
         {this.createMenuContainers()}
-        <ul className={styles.ui_mainmenu_footer}>
-          <li><a href='#' className='icon-user'>My Account</a></li>
-          <li><a href='#' className='icon-star-filled'>Hype</a></li>
-          <li><a href='#' className='icon-locator'>Locator</a></li>
-        </ul>
       </nav>
     )
   }

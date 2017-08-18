@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
 $secondLevelPadLeft: 40px;
 $thirdLevelPadLeft: 60px;
 
@@ -11,29 +12,32 @@ $thirdLevelPadLeft: 60px;
   /*HEADER*/
   .ui_mainmenu_header {
     position: fixed;
-    top: 60px;
-    left: 0;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 3;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    background-color: darkgray;
+    background-color: #2b3c4f;
     padding: 0;
     margin: 0;
     width: 100%;
+    max-width: 600px;
     overflow: hidden;
 
     .ui_mainmenu_header_item {
-      color: black;
+      color: white;
       font-size: 16px;
-      font-family: Arial, Helvetica, Verdana, sans-serif;
+      font-family: 'Roboto', sans-serif;
       text-transform: uppercase;
       position: relative;
       display: block;
-      padding: 10px 20px;
-      border-top: 1px solid darkgray;
-      background-color: darkgray;
+      padding: 14px 20px;
+      border-top: 1px solid #2b3c4f;
+      background-color: #2b3c4f;
       transition: color .3s ease-in-out;
+      cursor: pointer;
 
       &:after {
         display: block;
@@ -41,13 +45,13 @@ $thirdLevelPadLeft: 60px;
         position: absolute;
         left: 0;
         width: 100%;
-        border-bottom: 5px solid cornflowerblue;
+        border-bottom: 5px solid #69afff;
         transition: bottom .3s ease-in-out;
         bottom: -5px;
       }
 
       &.ui_mainmenu_header_item_active {
-        color: cornflowerblue;
+        color: #69afff;
 
         &:after {
           bottom: 0;
@@ -56,33 +60,11 @@ $thirdLevelPadLeft: 60px;
     }
   }
 
-  /*FOOTER*/
-  .ui_mainmenu_footer {
-    background-color: darkgray;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-
-    a {
-      position: relative;
-      display: block;
-      padding: 8px 20px;
-      color: black;
-      border-bottom: 1px solid white;
-      z-index: 2;
-      font-family: Arial, Helvetica, Verdana, sans-serif;
-
-      &:before {
-        padding-right: 10px;
-      }
-    }
-  }
-
   /*CONTENT*/
   .ui_content {
     width: 100%;
     margin: 0;
-    padding: 110px 0 0 0;
+    padding: 45px 0 0 0;
     position: relative;
     display: none;
   }
@@ -102,22 +84,22 @@ $thirdLevelPadLeft: 60px;
     user-select: none;
     list-style-type: none;
     position: relative;
-    background-color: gray;
+    background-color: #69afff;
 
     .ui_submenu_item {
-      background: white;
+      background-color: #ffffff;
     }
   }
 
   .ui_submenu_item_label {
     position: relative;
     display: block;
-    padding: 8px 20px;
-    color: black;
-    border-bottom: 1px solid darkgray;
+    padding: 14px 20px;
+    color: white;
     text-transform: uppercase;
     z-index: 2;
-    font-family: Arial, Helvetica, Verdana, sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
 
     &:before {
       position: absolute;
@@ -136,6 +118,8 @@ $thirdLevelPadLeft: 60px;
 
   .ui_submenu {
     .ui_submenu_item_label {
+      color: #707078;
+      border-bottom: 1px solid #d0d0d0;
       padding-left: $secondLevelPadLeft;
     }
   }
@@ -145,7 +129,7 @@ $thirdLevelPadLeft: 60px;
       .ui_submenu_item_label {
         padding-left: $thirdLevelPadLeft;
         text-transform: none;
-        font-family: Arial, Helvetica, Verdana, sans-serif;
+        font-family: 'Roboto', sans-serif;
       }
     }
   }
