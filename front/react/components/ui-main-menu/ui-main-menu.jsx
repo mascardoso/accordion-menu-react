@@ -153,6 +153,7 @@ class MainMenu extends Component {
           {this.createMenuHeader(this.state.menuItems)}
         </ul>
         {this.createMenuContainers()}
+        <input type="checkbox" onChange={this.props.handleCollapsableCheck}/>
       </nav>
     )
   }

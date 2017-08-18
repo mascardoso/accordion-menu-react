@@ -8,7 +8,7 @@ const ListItem = ({children, data, hasSubmenu, handleMenuItemClick, isOpen}) => 
         onClick={(ev) => { hasSubmenu ? handleMenuItemClick(ev, data) : ev.preventDefault() }}
         className={`
           ${styles.ui_submenu_item_label}
-          ${hasSubmenu ? 'icon-arrow-down-thicker' : ''}
+          ${hasSubmenu ? 'fa fa-angle-down' : ''}
           ${hasSubmenu && isOpen ? styles.ui_submenu_item_label_active : ''}
         `}
       >
