@@ -1,0 +1,153 @@
+$secondLevelPadLeft: 40px;
+$thirdLevelPadLeft: 60px;
+
+.ui_mainmenu {
+
+  li {
+    user-select: none;
+    list-style-type: none;
+  }
+
+  /*HEADER*/
+  .ui_mainmenu_header {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: darkgray;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+
+    .ui_mainmenu_header_item {
+      color: black;
+      font-size: 16px;
+      font-family: Arial, Helvetica, Verdana, sans-serif;
+      text-transform: uppercase;
+      position: relative;
+      display: block;
+      padding: 10px 20px;
+      border-top: 1px solid darkgray;
+      background-color: darkgray;
+      transition: color .3s ease-in-out;
+
+      &:after {
+        display: block;
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        border-bottom: 5px solid cornflowerblue;
+        transition: bottom .3s ease-in-out;
+        bottom: -5px;
+      }
+
+      &.ui_mainmenu_header_item_active {
+        color: cornflowerblue;
+
+        &:after {
+          bottom: 0;
+        }
+      }
+    }
+  }
+
+  /*FOOTER*/
+  .ui_mainmenu_footer {
+    background-color: darkgray;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    a {
+      position: relative;
+      display: block;
+      padding: 8px 20px;
+      color: black;
+      border-bottom: 1px solid white;
+      z-index: 2;
+      font-family: Arial, Helvetica, Verdana, sans-serif;
+
+      &:before {
+        padding-right: 10px;
+      }
+    }
+  }
+
+  /*CONTENT*/
+  .ui_content {
+    width: 100%;
+    margin: 0;
+    padding: 110px 0 0 0;
+    position: relative;
+    display: none;
+  }
+
+  .ui_content_active {
+    display: block;
+  }
+
+  /*SUBMENU*/
+  .ui_submenu {
+    padding: 0;
+    margin: 0;
+    display: none;
+  }
+
+  .ui_submenu_item {
+    user-select: none;
+    list-style-type: none;
+    position: relative;
+    background-color: gray;
+
+    .ui_submenu_item {
+      background: white;
+    }
+  }
+
+  .ui_submenu_item_label {
+    position: relative;
+    display: block;
+    padding: 8px 20px;
+    color: black;
+    border-bottom: 1px solid darkgray;
+    text-transform: uppercase;
+    z-index: 2;
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+
+    &:before {
+      position: absolute;
+      top: 7px;
+      right: 20px;
+      z-index: 1;
+      transition: transform .2s ease-in-out;
+    }
+  }
+
+  .ui_submenu_item_label_active {
+    &:before {
+      transform: rotate(180deg);
+    }
+  }
+
+  .ui_submenu {
+    .ui_submenu_item_label {
+      padding-left: $secondLevelPadLeft;
+    }
+  }
+
+  .ui_submenu {
+    .ui_submenu {
+      .ui_submenu_item_label {
+        padding-left: $thirdLevelPadLeft;
+        text-transform: none;
+        font-family: Arial, Helvetica, Verdana, sans-serif;
+      }
+    }
+  }
+}
+

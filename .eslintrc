@@ -1,0 +1,36 @@
+{
+  "extends": ["eslint:recommended", "plugin:react/recommended", "standard", "standard-react"],
+  "plugins": [
+    "react",
+    "html"
+  ],
+  "settings": {
+    "html/indent": "0",
+    "es6": true
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "allowImportExportEverywhere": false,
+    "ecmaVersion": 6
+  },
+  "rules": {
+    "no-console": "warn",
+    "prefer-const": ["error", {
+        "destructuring": "any"
+    }],
+    "indent": ["warn", 2, { "SwitchCase": 1 }],
+    "react/jsx-indent": "warn",
+    "no-debugger": "warn",
+    "react/jsx-closing-bracket-location": "error",
+    "react/prop-types": 0,
+    "import/first": 0,
+    "standard/no-callback-literal": 0,
+    "arrow-parens": ["error", "as-needed", { "requireForBlockBody": true }],
+    "no-mixed-operators": 0
+  }
+}
