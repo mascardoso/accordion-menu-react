@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import ListItem from './ui-main-menu-listitem.jsx'
 import MenuHeader from './ui-main-menu-header.jsx'
 import styles from './ui-main-menu.scss'
+import baseStyles from '../base.scss'
 import Velocity from 'velocity-animate'
 
 class MainMenu extends Component {
@@ -146,14 +147,27 @@ class MainMenu extends Component {
     })
   }
 
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.collapsable !== this.props.collapsable) {
+      this.setState({
+        menuItems,
+        foldedItems: {},
+        activeMenu: menuItems[0].slug
+      })
+    }
+  }
+
   render () {
     return (
-      <nav className={styles.ui_mainmenu}>
+      <nav className={`${styles.ui_mainmenu} ${this.props.collapsable ? styles.ui_mainmenu_blue : styles.ui_mainmenu_coral}`}>
         <ul className={styles.ui_mainmenu_header}>
           {this.createMenuHeader(this.state.menuItems)}
         </ul>
         {this.createMenuContainers()}
-        <input type="checkbox" onChange={this.props.handleCollapsableCheck}/>
+        <div className={baseStyles.checkbox_wrapper}>
+          <input id='handleCollapsable' type='checkbox' checked={this.props.collapsable} onChange={this.props.handleCollapsableCheck} />
+          <label htmlFor='handleCollapsable'>Collapsable</label>
+        </div>
       </nav>
     )
   }

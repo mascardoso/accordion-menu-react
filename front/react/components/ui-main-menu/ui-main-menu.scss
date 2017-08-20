@@ -1,6 +1,3 @@
-/**FONTS**/
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
-
 /**UI LEVEL**/
 $secondLevelPadLeft: 40px;
 $thirdLevelPadLeft: 60px;
@@ -48,14 +45,11 @@ $thirdLevelPadLeft: 60px;
         position: absolute;
         left: 0;
         width: 100%;
-        border-bottom: 5px solid #69afff;
         transition: bottom .3s ease-in-out;
         bottom: -5px;
       }
 
       &.ui_mainmenu_header_item_active {
-        color: #69afff;
-
         &:after {
           bottom: 0;
         }
@@ -87,11 +81,6 @@ $thirdLevelPadLeft: 60px;
     user-select: none;
     list-style-type: none;
     position: relative;
-    background-color: #69afff;
-
-    .ui_submenu_item {
-      background-color: #ffffff;
-    }
   }
 
   .ui_submenu_item_label {
@@ -137,5 +126,49 @@ $thirdLevelPadLeft: 60px;
       }
     }
   }
+
+  //THEME CORAL
+  &.ui_mainmenu_coral {
+    .ui_mainmenu_header_item {
+      &:after {
+        border-bottom: 5px solid #ff7569;
+      }
+      &.ui_mainmenu_header_item_active {
+        color: #ff7569;
+      }
+    }
+
+    .ui_submenu_item {
+      background-color: #ff7569;
+
+      .ui_submenu_item {
+        background-color: #ffffff;
+      }
+    }
+  }
+
+  //THEME BLUE
+  &.ui_mainmenu_blue {
+    .ui_mainmenu_header_item {
+      &:after {
+        border-bottom: 5px solid #69afff;
+      }
+
+      &.ui_mainmenu_header_item_active {
+        color: #69afff;
+      }
+    }
+
+    .ui_submenu_item {
+      background-color: #69afff;
+
+      .ui_submenu_item {
+        background-color: #ffffff;
+      }
+    }
+  }
 }
+
+
+
 

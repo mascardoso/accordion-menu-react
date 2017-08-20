@@ -19,7 +19,7 @@ class App extends Component {
   }
 
   render () {
-    return <MainMenu collapsable={this.state.isCollapsable} handleCollapsableCheck={this.handleCollapsableCheck}/>
+    return <MainMenu collapsable={this.state.isCollapsable} handleCollapsableCheck={this.handleCollapsableCheck} />
   }
 }
 

@@ -31,18 +31,9 @@ body {
 ol, ul {
   list-style: none;
 }
-blockquote, q {
-  quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
+
+/**FONTS**/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
 
 /**BODY**/
 
@@ -69,3 +60,28 @@ main {
   max-width: 600px;
   margin: 0 auto;
 }
+
+/*** custom checkboxes ***/
+
+.checkbox_wrapper {
+  text-align: center;
+  color: #ffffff;
+  margin-top: 15px;
+  font-size: 18px;
+
+  label {
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
+input[type=checkbox] { display:none; } /* to hide the checkbox itself */
+input[type=checkbox] + label:before {
+  font-family: FontAwesome;
+  display: inline-block;
+}
+
+input[type=checkbox] + label:before { content: "\f096"; } /* unchecked icon */
+input[type=checkbox] + label:before { letter-spacing: 10px; } /* space between checkbox and label */
+
+input[type=checkbox]:checked + label:before { content: "\f046"; } /* checked icon */
+input[type=checkbox]:checked + label:before { letter-spacing: 5px; } /* allow space for check mark */
